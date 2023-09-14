@@ -1,4 +1,4 @@
-package Entity;
+package org.hbm.Entity;
 
 import jakarta.persistence.*;
 
@@ -10,6 +10,7 @@ public class Employee implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
 
     @Column(length = 25)
@@ -25,8 +26,7 @@ public class Employee implements Serializable {
     }
 
 
-    public Employee(Long id, String fname, String lname, String nationalCode) {
-        this.id = id;
+    public Employee(String fname, String lname, String nationalCode) {
         this.fname = fname;
         this.lname = lname;
         this.nationalCode = nationalCode;
